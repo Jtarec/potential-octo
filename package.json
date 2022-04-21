@@ -1,0 +1,43 @@
+{
+	"name": "potential-octo",
+	"version": "1.0.0",
+	"description": "my hand written repo with jest and ts",
+	"main": "index.js",
+	"nextPointer": 3,
+	"scripts": {
+		"test": "jest",
+		"fix": "node scripts/fixpointer/index.js",
+		"create": "npm run fix && node scripts/create/index.js",
+		"generate": "node scripts/create/index.js",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Btrya/potential-octo.git"
+	},
+	"keywords": [
+		"cli",
+		"frontend"
+	],
+	"author": "Btrya",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Btrya/potential-octo/issues"
+	},
+	"homepage": "https://github.com/Btrya/potential-octo#readme",
+	"dependencies": {
+		"babel-jest": "^27.5.1",
+		"chalk": "^4.1.2",
+		"fs-extra": "^10.1.0",
+		"inquirer": "^8.2.2",
+		"jest": "^27.5.1",
+		"ts-jest": "^27.1.4",
+		"typescript": "^4.6.3"
+	},
+	"devDependencies": {
+		"@btrya/eslint-config": "0.0.8",
+		"@types/jest": "^27.4.1",
+		"eslint": "^8.13.0"
+	}
+}
