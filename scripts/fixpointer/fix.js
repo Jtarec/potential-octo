@@ -2,6 +2,7 @@ const {
   log,
   fs,
   SrcDir,
+  ensureSrc,
   readJSONFile,
   changeNextPointer,
 } = require('../utils')
@@ -43,6 +44,7 @@ function findNextPointer(arr) {
 
 module.exports = () => {
   return new Promise((resolve) => {
+    ensureSrc()
     const files = getAllFiles()
     checkFiles(files)
     resolve()

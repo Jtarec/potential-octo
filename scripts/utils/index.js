@@ -18,6 +18,10 @@ async function changeNextPointer(nextPointer = null) {
   await fs.writeJson(`${BasePath}/package.json`, packageObj, { spaces: '\t' })
 }
 
+function ensureSrc() {
+  fs.emptyDirSync(SrcDir)
+}
+
 module.exports = {
   log,
   fs,
@@ -27,6 +31,7 @@ module.exports = {
   RewriteTarget,
   ReWriteReg,
   TemplateFiles,
+  ensureSrc,
   readJSONFile,
   changeNextPointer,
 }

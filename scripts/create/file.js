@@ -5,6 +5,7 @@ const {
   SrcDir,
   ReWriteReg,
   TemplateFiles,
+  ensureSrc,
   readJSONFile,
   changeNextPointer,
 } = require('../utils')
@@ -67,6 +68,7 @@ async function save(target, json) {
 }
 
 module.exports = async({ fileName, funcName }) => {
+  ensureSrc()
   const targetDir = await copyTmeplate(fileName)
   await rewriteTemplate(targetDir, funcName)
   log(`Generate ${fileName} successful`, 'success')

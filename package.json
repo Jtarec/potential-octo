@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "my hand written repo with jest and ts",
 	"main": "index.js",
-	"nextPointer": 3,
+	"nextPointer": 1,
 	"scripts": {
 		"test": "jest",
 		"fix": "node scripts/fixpointer/index.js",
