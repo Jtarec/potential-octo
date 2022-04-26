@@ -53,7 +53,7 @@ async function copyTmeplate(fileName) {
 async function rewriteTemplate(target, funcName) {
   for (const file of TemplateFiles) {
     const fileJSON = await read(target + file, funcName)
-    await save(target + file, fileJSON)
+    save(target + file, fileJSON)
   }
 }
 
@@ -63,8 +63,8 @@ async function read(target, funcName) {
   return readerJson
 }
 
-async function save(target, json) {
-  await fs.writeFile(target, json, { encoding: 'utf-8' })
+function save(target, json) {
+  fs.writeFileSync(target, json, { encoding: 'utf-8' })
 }
 
 module.exports = async({ fileName, funcName }) => {
