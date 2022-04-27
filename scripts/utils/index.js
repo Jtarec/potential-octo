@@ -2,8 +2,8 @@ const { log } = require('./log')
 const path = require('path')
 const fs = require('fs-extra')
 const BasePath = path.resolve(__dirname, '../../')
-const TemplateDir = `${path.resolve(__dirname, '../../')}/template`
-const SrcDir = `${BasePath}/src`
+const TemplateDir = `${BasePath}/template`
+const SrcDir = `${BasePath}/handwritten`
 const RewriteTarget = 'create_funcName'
 const ReWriteReg = new RegExp(`(${RewriteTarget})+`, 'g')
 const TemplateFiles = ['/index.ts', '/index.spec.ts']
@@ -19,7 +19,7 @@ async function changeNextPointer(nextPointer = null) {
 }
 
 function ensureSrc() {
-  fs.emptyDirSync(SrcDir)
+  fs.ensureDirSync(SrcDir)
 }
 
 module.exports = {
