@@ -15,7 +15,7 @@ function getAllFiles() {
 async function checkFiles(files) {
   const sorted = files.map(item => item.split('.')[0]).sort((a, b) => a - b)
   const { nextPointer } = await readJSONFile()
-  if (isConsecutiveArray(sorted) && nextPointer === sorted.length) {
+  if (isConsecutiveArray(sorted) && nextPointer - 1 === sorted.length) {
     log('No need to fix pointer')
   }
   else {
