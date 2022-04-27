@@ -3,10 +3,10 @@
 	"version": "1.0.0",
 	"description": "my hand written repo with jest and ts",
 	"main": "index.js",
-	"nextPointer": 5,
 	"scripts": {
 		"test": "jest -t",
 		"test:all": "jest",
+		"test:changed": "node scripts/jestChanged/index.js",
 		"fix": "node scripts/fixpointer/index.js",
 		"create": "npm run fix && node scripts/create/index.js",
 		"generate": "node scripts/create/index.js",

@@ -2,7 +2,7 @@ const {
   log,
   fs,
   SrcDir,
-  ensureSrc,
+  ensureDir,
   readJSONFile,
   changeNextPointer,
 } = require('../utils')
@@ -14,13 +14,13 @@ function getAllFiles() {
 
 async function checkFiles(files) {
   const sorted = files.map(item => item.split('.')[0]).sort((a, b) => a - b)
-  if (isConsecutiveArray(sorted)) {
+  const { nextPointer } = await readJSONFile()
+  if (isConsecutiveArray(sorted) && nextPointer - 1 === sorted.length) {
     log('No need to fix pointer')
   }
   else {
     const point = findNextPointer(sorted)
     log(`Find your pointer must be ${point}`, 'warning')
-    await readJSONFile()
     await changeNextPointer(point)
     log('Change your pointer successful.', 'success')
   }
@@ -30,8 +30,8 @@ async function checkFiles(files) {
  * 是否是连续数组 且从 1 开始
  */
 function isConsecutiveArray(arr = []) {
-  const n = arr.length
-  return arr[0] === 1 && n === arr[n - 1]
+  const n = arr.length  
+  return Number(arr[0]) === 1 && n === Number(arr[n - 1])
 }
 
 function findNextPointer(arr) {
@@ -44,7 +44,7 @@ function findNextPointer(arr) {
 
 module.exports = () => {
   return new Promise((resolve) => {
-    ensureSrc()
+    ensureDir(SrcDir)
     const files = getAllFiles()
     checkFiles(files)
     resolve()

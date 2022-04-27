@@ -1,25 +1,38 @@
-const { log } = require('./log')
-const path = require('path')
 const fs = require('fs-extra')
-const BasePath = path.resolve(__dirname, '../../')
-const TemplateDir = `${BasePath}/template`
-const SrcDir = `${BasePath}/handwritten`
-const RewriteTarget = 'create_funcName'
-const ReWriteReg = new RegExp(`(${RewriteTarget})+`, 'g')
-const TemplateFiles = ['/index.ts', '/index.spec.ts']
+
+const { log } = require('./log')
+const { 
+  BasePath,
+  TemplateDir,
+  SrcDir,
+  RewriteTarget,
+  ReWriteReg,
+  TemplateFiles,
+  cacheFileName,
+} = require('./config')
 
 let packageObj
 async function readJSONFile() {
-  packageObj = await fs.readJson(`${BasePath}/package.json`)
+  ensureFile(`${BasePath}/cache.json`)
+  try {
+    packageObj = await fs.readJson(`${BasePath}/cache.json`)
+  } catch {
+    packageObj = { nextPointer: 1 }
+  }
   return packageObj
 }
+
 async function changeNextPointer(nextPointer = null) {
   packageObj.nextPointer = nextPointer || Number(packageObj.nextPointer) + 1
-  await fs.writeJson(`${BasePath}/package.json`, packageObj, { spaces: '\t' })
+  await fs.writeJson(`${BasePath}/cache.json`, packageObj, { spaces: '\t' })
 }
 
-function ensureSrc() {
-  fs.ensureDirSync(SrcDir)
+function ensureDir(dir) {
+  fs.ensureDirSync(dir)
+}
+
+function ensureFile(file) {
+  fs.ensureFileSync(file)
 }
 
 module.exports = {
@@ -31,7 +44,9 @@ module.exports = {
   RewriteTarget,
   ReWriteReg,
   TemplateFiles,
-  ensureSrc,
+  cacheFileName,
   readJSONFile,
   changeNextPointer,
+  ensureDir,
+  ensureFile,
 }
