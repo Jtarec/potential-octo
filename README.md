@@ -32,16 +32,21 @@ eslint自动修复：
 npm run lint:fix
 ```
 
-jest测试用例检查:
+jest检查目标测试用例:
 ```
-npm run test
+npm run test -- "your describe name"
+```
+
+jest检查所有测试用例:
+```
+npm run test:all
 ```
 
 ## 功能特性 | Features
 
 - [x] 支持 **自定义模板** 创建文件
 - [ ] 支持 jest 仅检测最新测试用例
-- [ ] 支持 jest 根据命令执行对应序号测试用例
+- [x] 支持 jest 根据命令执行对应测试用例
 - [ ] 提供常考手写题对应测试用例及答案解析
 
 ## commit 规范
