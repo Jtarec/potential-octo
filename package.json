@@ -3,7 +3,6 @@
 	"version": "1.0.0",
 	"description": "my hand written repo with jest and ts",
 	"main": "index.js",
-	"nextPointer": 5,
 	"scripts": {
 		"test": "jest -t",
 		"test:all": "jest",
