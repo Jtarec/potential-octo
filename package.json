@@ -6,6 +6,7 @@
 	"scripts": {
 		"test": "jest -t",
 		"test:all": "jest",
+		"test:changed": "node scripts/jestChanged/index.js",
 		"fix": "node scripts/fixpointer/index.js",
 		"create": "npm run fix && node scripts/create/index.js",
 		"generate": "node scripts/create/index.js",
