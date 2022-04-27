@@ -1,7 +1,6 @@
 # potential-octo
 
 Typescript、Jest、babel、eslint 集合模板工具，支持模板配置，快速创建模板
-
 ## 使用方法
 
 涵盖修复文件指针版创建文件：
@@ -38,7 +37,20 @@ jest测试用例检查:
 npm run test
 ```
 
-## 待优化
+## 功能特性 | Features
 
-支持脚手架创建
-src 目录边界条件处理
+- [x] 支持 **自定义模板** 创建文件
+- [ ] 支持 jest 仅检测最新测试用例
+- [ ] 支持 jest 根据命令执行对应序号测试用例
+- [ ] 提供常考手写题对应测试用例及答案解析
+
+## commit 规范
+
+- feat: 新增功能
+- fix: 修复 bug
+- docs: 文档变更/ md 变更
+- refactor: 模块重构
+- test: 增加、修改测试用例
+- build: 依赖变更
+- chore: 其他杂项
+- revert: 回滚 commit
