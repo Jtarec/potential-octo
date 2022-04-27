@@ -25,10 +25,15 @@ process.stdout.write(process.platform === 'win32' ? "\x1Bc" : "\x1B[2J\x1B[3J\x1
 
 const files = execSync("git status -s").toString().split("\n").filter(item => item.indexOf('handwritten') !== -1).map(item => getDirName(Octal2Chinese(item)))
 
+if (files.length === 0) {
+  log(`Sorry, no file changed.`, 'warning')
+  return
+}
+
 const ming = `npm run test:all -- ${files.join(' ')}`
 
-log(`running jest for ${files.join(',')}`)
+log(`Running jest changed task for ${files.join(',')}.`)
 
 execSync(ming)
 
-log(`finsh jest changed task`, 'success')
+log(`Finsh jest changed task.`, 'success')
