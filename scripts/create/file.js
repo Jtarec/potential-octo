@@ -28,7 +28,7 @@ async function getFileName(fileName) {
  */
 // TODO: add configuration
 // TOFIX: use async await
-async function copyTmeplate(fileName) {
+async function copyTemplate(fileName) {
   const targetDir = SrcDir + await getFileName(fileName)
   return new Promise((resolve, reject) => {
     fs.ensureDir(targetDir)
@@ -69,7 +69,7 @@ function save(target, json) {
 
 module.exports = async({ fileName, funcName }) => {
   ensureDir(SrcDir)
-  const targetDir = await copyTmeplate(fileName)
+  const targetDir = await copyTemplate(fileName)
   await rewriteTemplate(targetDir, funcName)
   log(`Generate ${fileName} successful`, 'success')
   await changeNextPointer()
