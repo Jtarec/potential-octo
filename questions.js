@@ -1,7 +1,19 @@
-const q = [
+const problems = [
     {
         "filename": "compose函数",
         "funcname": "compose"
+    },
+    {
+        "filename": "setTimeout模拟setInterval",
+        "funcname": "mySetInterval"
+    },
+    {
+        "filename": "手写类型判断",
+        "funcname": "myTypeof"
+    },
+    {
+        "filename": "手写数组去重",
+        "funcname": "myUniq"
     },
     {
         "filename": "深拷贝(考虑到复制Symbol类型)",
@@ -22,10 +34,6 @@ const q = [
     {
         "filename": "节流",
         "funcname": "throttle"
-    },
-    {
-        "filename": "setTimeout模拟setInterval",
-        "funcname": "mySetInterval"
     },
     {
         "filename": "写版本号排序的方法",
@@ -60,10 +68,6 @@ const q = [
         "funcname": "AJAX"
     },
     {
-        "filename": "手写类型判断",
-        "funcname": "myTypeof"
-    },
-    {
         "filename": "分片思想解决大数据量渲染问题",
         "funcname": "slicing"
     },
@@ -96,10 +100,6 @@ const q = [
         "funcname": "ObjectCreate"
     },
     {
-        "filename": "手写数组去重",
-        "funcname": "myUniq"
-    },
-    {
         "filename": "数组扁平化",
         "funcname": "flatter"
     },
@@ -120,3 +120,11 @@ const q = [
         "funcname": "myCall"
     }
 ]
+
+const update = require('./scripts/generate/file')
+for (let index = 0; index < problems.length; index++) {
+    const element = problems[index];
+    (async () => {
+        await update({ dirPath: "handwritten", id: index + 1, fileName: element.filename, funcName: element.funcname })
+    })()
+}

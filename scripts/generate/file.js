@@ -69,6 +69,7 @@ function generateMarkdown() {
 }
 
 module.exports = async ({ dirPath, id, fileName, funcName }) => {
+  console.log("dirPath", dirPath)
   const targetDir = `${SrcPath}/${dirPath}/${id}.${fileName}`
   const curTemplateDir = `${TemplateDir}/${dirPath}`
 
