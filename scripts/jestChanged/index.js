@@ -38,4 +38,4 @@ log(`Running jest changed task for ${files.join(',')}.`)
 
 execSync(ming)
 
-log('Finsh jest changed task.', 'success')
+log('Finish jest changed task.', 'success')

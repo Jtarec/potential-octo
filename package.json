@@ -7,9 +7,7 @@
 		"test": "jest -t",
 		"test:all": "jest",
 		"test:changed": "node scripts/jestChanged/index.js",
-		"fix": "node scripts/fixpointer/index.js",
-		"create": "npm run fix && node scripts/create/index.js",
-		"generate": "node scripts/generate/index.js",
+		"create": "node scripts/generate/index.js",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix"
 	},
