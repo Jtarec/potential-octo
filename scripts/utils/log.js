@@ -9,16 +9,16 @@ const chalkMap = {
   error,
   warning,
   success,
-  normal
+  normal,
 }
 
 const log = (msg, event) => {
-  if (!chalkMap[event]) {
+  if (!chalkMap[event])
     event = 'normal'
-  }
+
   console.log(chalkMap[event](msg))
 }
 
 module.exports = {
-  log
+  log,
 }

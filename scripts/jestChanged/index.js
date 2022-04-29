@@ -29,7 +29,7 @@ const files = execSync('git status -s').toString().split('\n').filter(item => it
 
 if (files.length === 0) {
   log('Sorry, no file changed.', 'warning')
-  return
+  process.exit(0)
 }
 
 const ming = `npm run test:all -- ${files.join(' ')}`
