@@ -1,9 +1,10 @@
 const fs = require('fs-extra')
 
 const { log } = require('./log')
-const { 
+const {
   BasePath,
   TemplateDir,
+  SrcPath,
   SrcDir,
   RewriteTarget,
   ReWriteReg,
@@ -16,7 +17,8 @@ async function readJSONFile() {
   ensureFile(`${BasePath}/cache.json`)
   try {
     packageObj = await fs.readJson(`${BasePath}/cache.json`)
-  } catch {
+  }
+  catch {
     packageObj = { nextPointer: 1 }
   }
   return packageObj
@@ -40,6 +42,7 @@ module.exports = {
   fs,
   BasePath,
   TemplateDir,
+  SrcPath,
   SrcDir,
   RewriteTarget,
   ReWriteReg,
