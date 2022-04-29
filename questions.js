@@ -116,7 +116,7 @@ const problems = [
         "funcname": "myNew"
     },
     {
-        "filename": "call apply bind",
+        "filename": "手写call,apply,bind",
         "funcname": "myCall"
     }
 ]
