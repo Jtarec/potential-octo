@@ -33,4 +33,4 @@
 | [27.寄生组合继承](./src/handwritten/27.寄生组合继承/readme.md) |
 | [28.实现有并行限制的Promise调度器](./src/handwritten/28.实现有并行限制的Promise调度器/readme.md) |
 | [29.new操作符](./src/handwritten/29.new操作符/readme.md) |
-| [30.call apply bind](./src/handwritten/30.call apply bind/readme.md) |
+| [30.手写call,apply,bind](./src/handwritten/30.手写call,apply,bind/readme.md) |
