@@ -1,10 +1,9 @@
-## Object.create实现
+## ObjectCreate实现
 
-### 作用
+### 题目详解
 
 Object.create() 方法可以创建一个新的对象，使用现有的对象来提供新创建对象的__proto__
 
-### 实现
 ```ts
 function ObjectCreate(obj) {
   // 创建一个构造函数 F
@@ -17,6 +16,7 @@ function ObjectCreate(obj) {
 ```
 
 ### 扩展
+
 - 怎样创建一个干净的空对象？
 ```ts
 // 创建一个原型为 null 的空对象

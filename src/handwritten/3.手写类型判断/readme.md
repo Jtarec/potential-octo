@@ -1,5 +1,7 @@
 ## 手写类型判断
 
+### 题目详解
+
 类型判断即需要判断传入的值是以下哪种类型
 
 number、string、boolean、function、object、bigint、symbol、null、undefined
