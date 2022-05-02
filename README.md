@@ -11,17 +11,6 @@ npm run create
 
 即会自动根据 template 模板文件夹在 src 目录下生成对应的文件内容，并自动配置好 jest 导入函数以及其他内容
 
-修复文件指针：
-```
-npm run fix
-```
-文件名从 1 开始自增，如中间删除了某个文件夹比如 已存在 1 2 3 个文件夹，删除 2 号文件夹，使用 fix 后下次创建文件夹将创建 以 2 为开头文件夹
-
-直接创建文件夹：
-```
-npm run generate
-```
-
 eslint检查：
 ```
 npm run lint
@@ -32,29 +21,27 @@ eslint自动修复：
 npm run lint:fix
 ```
 
+jest检查所有测试用例:
+```
+npm run test
+```
+
 jest检查目标测试用例:
 ```
-npm run test -- "your describe name"
+npm run test -- "yourDescribeName1 yourDescribeName2"
 ```
 
 jest检查涉及修改的(对应函数文件被改动的)测试用例:
 ```
 npm run test:changed
 ```
-
-
-jest检查所有测试用例:
-```
-npm run test:all
-```
-
 ## 功能特性 | Features
 
 - [x] 支持 **自定义模板** 创建文件
 - [x] 支持 jest 仅检测涉及修改的测试用例
 - [x] 支持 jest 根据命令执行对应测试用例
 - [ ] 提供常考手写题对应测试用例及答案解析
-- [ ] 全局 READNE.md 需要展示当前生成的题目总数 以及通过的题目数量
+- [ ] 全局 Problem.md 需要展示当前生成的题目总数 以及通过的题目数量
 
 ## commit 规范
 

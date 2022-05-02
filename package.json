@@ -4,8 +4,7 @@
 	"description": "my hand written repo with jest and ts",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest -t",
-		"test:all": "jest",
+		"test": "jest",
 		"test:changed": "node scripts/jestChanged/index.js",
 		"create": "node scripts/generate/index.js",
 		"lint": "eslint .",
