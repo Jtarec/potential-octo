@@ -32,7 +32,7 @@ if (files.length === 0) {
   process.exit(0)
 }
 
-const ming = `npm run test:all -- ${files.join(' ')}`
+const ming = `npm run test -- ${files.join(' ')}`
 
 log(`Running jest changed task for ${files.join(',')}.`)
 
