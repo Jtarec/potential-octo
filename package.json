@@ -6,7 +6,7 @@
 	"scripts": {
 		"test": "jest",
 		"test:changed": "node scripts/jestChanged/index.js",
-		"create": "node scripts/generate/index.js",
+		"create": "node scripts/create/index.js",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix"
 	},

@@ -81,8 +81,8 @@ module.exports = async ({ dirPath, id, fileName, funcName }) => {
   await copyTemplate(targetDir, curTemplateDir)
   await rewriteTemplate(targetDir, funcName)
   renameSpecFile(targetDir, funcName)
-  log(`Generate ${fileName} successful`, 'success')
+  log(`Create ${fileName} successful`, 'success')
 
   await generateMarkdown(SrcPath)
-  log('Generate Promise.md successful', 'success')
+  log('Update Promise.md successful', 'success')
 }

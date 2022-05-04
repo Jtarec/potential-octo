@@ -121,7 +121,7 @@ const problems = [
     }
 ]
 
-const update = require('./scripts/generate/file')
+const update = require('./scripts/create/file')
 for (let index = 0; index < problems.length; index++) {
     const element = problems[index];
     (async () => {
