@@ -43,6 +43,12 @@ function save(target, json) {
   fs.writeFileSync(target, json, { encoding: 'utf-8' })
 }
 
+function renameSpecFile(target, funcName) {
+  fs.rename(`${target}/index.spec.ts`, `${target}/${funcName}.spec.ts`, function(err) {
+    if (err) log(`Error: rename SpecFile error(${err})`, 'error')
+  })
+}
+
 /**
  * @description: 生成 md 文档
  * @return {*}
@@ -69,12 +75,12 @@ function generateMarkdown() {
 }
 
 module.exports = async ({ dirPath, id, fileName, funcName }) => {
-  console.log("dirPath", dirPath)
   const targetDir = `${SrcPath}/${dirPath}/${id}.${fileName}`
   const curTemplateDir = `${TemplateDir}/${dirPath}`
 
   await copyTemplate(targetDir, curTemplateDir)
   await rewriteTemplate(targetDir, funcName)
+  renameSpecFile(targetDir, funcName)
   log(`Generate ${fileName} successful`, 'success')
 
   await generateMarkdown(SrcPath)
