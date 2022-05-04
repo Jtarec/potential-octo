@@ -14,7 +14,7 @@
 ```ts
 function deepClone(obj) {
   // is Object ?
-  if (!obj || typeof obj !== "object") return
+  if (!obj || typeof obj !== "object") return obj
   // 根据当前的 obj 的类型初始化一个 newObj 来做后续的存储
   let newObj = Array.isArray(obj) ? [] : {}
   // Reflect.ownKeys 可以遍历到 Symbol 的key
@@ -33,7 +33,7 @@ function deepClone(obj) {
 ```ts
 function deepClone(obj, hash = new WeakMap()) {
   // is Object ?
-  if (!obj || typeof obj !== "object") return
+  if (!obj || typeof obj !== "object") return obj
   if (hash.has(obj)) return hash.get(obj)
   // 根据当前的 obj 的类型初始化一个 newObj 来做后续的存储
   let newObj = Array.isArray(obj) ? [] : {}
