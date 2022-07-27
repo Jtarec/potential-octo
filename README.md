@@ -28,7 +28,9 @@ npm run test
 
 jest检查目标测试用例:
 ```
-npm run test -- "yourDescribeName1 yourDescribeName2"
+npm run test "yourDescribeName1 yourDescribeName2"
+
+eg: npm run test myCall
 ```
 
 jest检查涉及修改的(对应函数文件被改动的)测试用例:
