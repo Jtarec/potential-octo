@@ -9,7 +9,7 @@ export function myCall(context, ...args) {
 };
 
 // apply原理一致  只是第二个参数是传入的数组
-export function myApply(context, args) {
+export function myApply(context, args = []) {
   if (!context || context === null) context = window;
   let fn = Symbol();
   context[fn] = this;
@@ -34,16 +34,15 @@ export function myBind(context, ...args) {
     if (this instanceof _this === true) {
       // 此时this指向指向result的实例  这时候不需要改变this指向
       this[fn] = _this;
-      this[fn](...[...args, ...innerArgs]); //这里使用es6的方法让bind支持参数合并
+      return this[fn](...[...args, ...innerArgs]); //这里使用es6的方法让bind支持参数合并
     } else {
       // 如果只是作为普通函数调用  那就很简单了 直接改变this指向为传入的context
-      context[fn](...[...args, ...innerArgs]);
+      return context[fn](...[...args, ...innerArgs]);
     }
   };
   // 如果绑定的是构造函数 那么需要继承构造函数原型属性和方法
   // 实现继承的方式: 使用Object.create
   result.prototype = Object.create(this.prototype);
 
-  console.log(result)
   return result;
 };

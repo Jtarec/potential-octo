@@ -11,6 +11,14 @@ npm run create
 
 即会自动根据 template 模板文件夹在 src 目录下生成对应的文件内容，并自动配置好 jest 导入函数以及其他内容
 
+
+执行目标代码:
+```
+npm run run:code "/path/code.ts"
+
+eg: npm run test myCall
+```
+
 eslint检查：
 ```
 npm run lint
