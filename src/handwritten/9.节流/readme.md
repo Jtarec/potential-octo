@@ -25,7 +25,7 @@ export function throttle(fn, delay = 300) {
 定时器版本：
 ```ts
 function throttle(fn, delay = 300) {
-  const timer = null
+  let timer = null
   return function () {
     const args = arguments
     if (!timer) {
